@@ -1,12 +1,12 @@
-/* Reset some default browser styles for the index.html page */
+
 html, body, div, h1, h2, h3, p, a {
     margin: 0;
     padding: 0;
     border: 0;
-    text-decoration: none; /* Remove underline from links */
+    text-decoration: none; 
 }
 
-/* Set up basic styles for the index.html page */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -14,9 +14,9 @@ body {
     line-height: 1.6;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Change align-items to flex-start */
-    min-height: 100vh; /* Change height to min-height */
-    padding-top: 10vh; /* Add top padding to create space */
+    align-items: flex-start;
+    min-height: 100vh; 
+    padding-top: 10vh; 
 }
 
 .container {
@@ -26,7 +26,7 @@ body {
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    transform: translateY(-20px); /* Add a slight hover effect */
+    transform: translateY(-20px);
     transition: transform 0.3s ease;
 }
 
@@ -45,22 +45,21 @@ header {
 
 h1 {
     font-size: 36px;
-    animation: fadeInUp 1s ease; /* Add fadeInUp animation */
+    animation: fadeInUp 1s ease;
 }
 
-/* Style the content section for index.html */
+
 .content {
     text-align: center;
-    animation: fadeInUp 1s ease; /* Add fadeInUp animation */
+    animation: fadeInUp 1s ease; 
 }
 
 p {
     font-size: 18px;
     margin-bottom: 10px;
-    animation: fadeInUp 1s ease; /* Add fadeInUp animation */
+    animation: fadeInUp 1s ease;
 }
 
-/* Style the "View Results" button for index.html */
 .button {
     display: inline-block;
     padding: 10px 20px;
@@ -75,7 +74,6 @@ p {
     background-color: #0056b3;
 }
 
-/* Keyframes for fadeInUp animation */
 @keyframes fadeInUp {
     0% {
         opacity: 0;

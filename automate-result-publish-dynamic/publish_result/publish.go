@@ -22,11 +22,9 @@ func mergeCells(sheet *xlsx.Sheet, startRow, endRow, startCol, endCol int) {
 	}
 }
 
-// processSubjectWithMarks processes a subject's Excel file and appends the result to the output sheet with marks.
-// processSubjectWithMarks processes a subject's Excel file and appends the result to the output sheet with marks.
-// processSubjectWithMarks processes a subject's Excel file and appends the result to the output sheet with marks.
+// processSubjectWithMarks processes a subject's Excel file and appends the result to the output sheet (with marks).
 func processSubjectWithMarks(outputSheet *xlsx.Sheet, subjectName string, columnIndex, numTeams int) {
-	// Open the Excel file for the subject you want to process.
+	// Open the Excel file for the subject with name subjectName from "subjects_marks" dir.
 	fileName := filepath.Join("publish_result/subjects_marks", subjectName+".xlsx")
 	file, err := xlsx.OpenFile(fileName)
 	if err != nil {
@@ -56,7 +54,7 @@ func processSubjectWithMarks(outputSheet *xlsx.Sheet, subjectName string, column
 		return teamA < teamB
 	})
 
-	// Find the marks of the 40th team.
+	// Get marks of 40th team.
 	numTeamsMarks, _ := strconv.Atoi(rows[numTeams].Cells[1].Value)
 
 	// Select the top 40 teams and teams with equal marks to the 40th team.
@@ -73,7 +71,7 @@ func processSubjectWithMarks(outputSheet *xlsx.Sheet, subjectName string, column
 		}
 	}
 
-	// Merge cells for the subject name header.
+	// Merge cells of subject name header.
 	mergeCells(outputSheet, 0, 0, columnIndex, columnIndex+1)
 
 	// Set the subject name header in the merged cell.
@@ -93,7 +91,6 @@ func processSubjectWithMarks(outputSheet *xlsx.Sheet, subjectName string, column
 	}
 }
 
-// processSubjectNamesOnly processes a subject's Excel file and appends the result to the output sheet with only team names.
 // processSubjectNamesOnly processes a subject's Excel file and appends the result to the output sheet with only team names.
 func processSubjectNamesOnly(outputSheet *xlsx.Sheet, subjectName string, columnIndex, numTeams int) {
 	// Open the Excel file for the subject you want to process.
@@ -150,7 +147,7 @@ func processSubjectNamesOnly(outputSheet *xlsx.Sheet, subjectName string, column
 	cell := outputSheet.Cell(0, columnIndex)
 	cell.Value = subjectName
 
-	// Add selected teams' data for this subject.
+	// Add selected teams' data for this subject. (name only)
 	for i, team := range selectedTeams {
 		outputSheet.Cell(i+1, columnIndex).Value = team
 	}
@@ -169,7 +166,7 @@ func main() {
 	// Create a new Excel file to store the selected teams without marks.
 	outputFileWithoutMarks := xlsx.NewFile()
 
-	// Add a sheet for the subjects in both output files.
+	// Add a sheet for the subjects in all output files.
 	outputSheetWithMarks, err := outputFileWithMarks.AddSheet("SelectedTeamsWithMarks")
 	if err != nil {
 		log.Fatalf("Error adding sheet: %v", err)
@@ -193,9 +190,9 @@ func main() {
 	// Process each subject and append the result to the output sheets.
 	columnIndex := 0
 	for _, subjectName := range subjectNames {
-		numTeams := 40 // Default number of teams to select
+		numTeams := 40 // (Number of teams to select)
 		if subjectName == "ComputerSubject" || subjectName == "BiologySubject" {
-			numTeams = 20 // Number of teams to select for ComputerSubject and BiologySubject
+			numTeams = 20 // ( Number of teams to select for ComputerSubject and BiologySubject )
 		}
 
 		processSubjectWithMarks(outputSheetWithMarks, subjectName, columnIndex, numTeams)

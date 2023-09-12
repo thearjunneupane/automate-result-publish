@@ -10,7 +10,7 @@ import (
 	"github.com/tealeg/xlsx"
 )
 
-// mergeCells merges cells in a given range of rows and columns.
+// mergeCellsin a given range of rows and columns.
 func mergeCells(sheet *xlsx.Sheet, startRow, endRow, startCol, endCol int) {
 	for i := startRow; i <= endRow; i++ {
 		for j := startCol; j <= endCol; j++ {
@@ -78,7 +78,7 @@ func excelToHTML(fileName string) (string, error) {
 }
 
 func resultHandler(w http.ResponseWriter, r *http.Request) {
-	// Generate HTML from Excel data (replace "result.xlsx" with your actual file)
+	// Generate HTML from Excel data
 	htmlTable, err := excelToHTML("resultwithmarks.xlsx")
 	if err != nil {
 		http.Error(w, "Error generating HTML: "+err.Error(), http.StatusInternalServerError)

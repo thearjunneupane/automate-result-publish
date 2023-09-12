@@ -59,7 +59,7 @@ func main() {
 		// Seed the random number generator
 		rand.Seed(time.Now().UnixNano())
 
-		// Determine the number of teams based on the subject
+		// Init many teams to be generated
 		var numTeams int
 		if subjectName == "ComputerSubject" || subjectName == "BiologySubject" {
 			numTeams = 40
@@ -91,12 +91,4 @@ func main() {
 
 		fmt.Printf("Excel file '%s' created successfully with %d teams in %s.\n", fileName, numTeams, outputPath)
 	}
-}
-
-func getCurrentDirectory() string {
-	dir, err := os.Getwd()
-	if err != nil {
-		fmt.Println("Error getting current directory:", err)
-	}
-	return dir
 }

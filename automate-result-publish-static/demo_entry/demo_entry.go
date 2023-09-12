@@ -92,11 +92,3 @@ func main() {
 		fmt.Printf("Excel file '%s' created successfully with %d teams in %s.\n", fileName, numTeams, outputPath)
 	}
 }
-
-func getCurrentDirectory() string {
-	dir, err := os.Getwd()
-	if err != nil {
-		fmt.Println("Error getting current directory:", err)
-	}
-	return dir
-}

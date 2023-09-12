@@ -64,7 +64,7 @@ func excelToHTML(fileName string) (string, error) {
 }
 
 func main() {
-	fileName := "resultwithmarks.xlsx" // Replace with the actual filename
+	fileName := "resultwithmarks.xlsx"
 	htmlTable, err := excelToHTML(fileName)
 	if err != nil {
 		panic(err)

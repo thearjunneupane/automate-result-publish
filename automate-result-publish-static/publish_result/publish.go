@@ -92,7 +92,6 @@ func processSubjectWithMarks(outputSheet *xlsx.Sheet, subjectName string, column
 }
 
 // processSubjectNamesOnly processes a subject's Excel file and appends the result to the output sheet with only team names.
-// processSubjectNamesOnly processes a subject's Excel file and appends the result to the output sheet with only team names.
 func processSubjectNamesOnly(outputSheet *xlsx.Sheet, subjectName string, columnIndex, numTeams int) {
 	// Open the Excel file for the subject you want to process.
 	fileName := filepath.Join("publish_result/subjects_marks", subjectName+".xlsx")
