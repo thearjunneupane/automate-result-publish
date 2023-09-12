@@ -1,0 +1,85 @@
+/* Reset some default browser styles */
+html, body, div, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* Set up basic styles for the page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333; /* Darker text color for better readability */
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Rounded corners for the container */
+}
+
+header {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 5px; /* Rounded header */
+}
+
+h1 {
+    font-size: 36px; /* Larger font size for the main title */
+}
+
+/* Style the table */
+.table-container {
+    overflow-x: auto;
+    border-radius: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 15px; /* Increase cell padding for better spacing */
+    text-align: left;
+}
+
+th {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+.subject-name {
+    text-align: center;
+    border: 2px solid #444;
+}
+
+.team-name, .team-marks {
+    font-weight: bold;
+}
+
+.team-name {
+    min-width: 85px;
+}
+
+.description {
+    margin: 20px;
+    text-align: center;
+}
