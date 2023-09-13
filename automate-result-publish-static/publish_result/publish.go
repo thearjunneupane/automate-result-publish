@@ -1,4 +1,4 @@
-package main
+package publish_result
 
 import (
 	"fmt"
@@ -153,7 +153,7 @@ func processSubjectNamesOnly(outputSheet *xlsx.Sheet, subjectName string, column
 	}
 }
 
-func main() {
+func Publish() {
 	resultsDir := "publish_result/results"
 	altresultsDir := ""
 	if err := os.MkdirAll(resultsDir, os.ModePerm); err != nil {

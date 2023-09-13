@@ -6,6 +6,8 @@ import (
 	"strings"
 
 	"github.com/tealeg/xlsx"
+	"github.com/thearjunneupane/automate-result-publish/automate-result-publish-static/demo_entry"
+	"github.com/thearjunneupane/automate-result-publish/automate-result-publish-static/publish_result"
 )
 
 func excelToHTML(fileName string) (string, error) {
@@ -64,6 +66,9 @@ func excelToHTML(fileName string) (string, error) {
 }
 
 func main() {
+	demo_entry.Demo_Entry()
+	publish_result.Publish()
+
 	fileName := "resultwithmarks.xlsx"
 	htmlTable, err := excelToHTML(fileName)
 	if err != nil {
