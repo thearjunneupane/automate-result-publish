@@ -108,7 +108,7 @@ func resultHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	demo_entry.Demo_Entry()
+	demo_entry.Demo_entry()
 	publish_result.Publish()
 	// Define a route for displaying the result HTML
 	http.HandleFunc("/result", resultHandler)

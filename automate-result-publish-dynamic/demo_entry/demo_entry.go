@@ -11,7 +11,7 @@ import (
 	"github.com/tealeg/xlsx"
 )
 
-func Demo_Entry() {
+func Demo_entry() {
 
 	if err := os.MkdirAll("../publish_result/subjects_marks", os.ModePerm); err != nil {
 		log.Fatalf("Error creating results directory: %v", err)

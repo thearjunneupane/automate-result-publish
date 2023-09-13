@@ -66,7 +66,8 @@ func excelToHTML(fileName string) (string, error) {
 }
 
 func main() {
-	demo_entry.Demo_Entry()
+
+	demo_entry.Demo_entry()
 	publish_result.Publish()
 
 	fileName := "resultwithmarks.xlsx"

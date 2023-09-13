@@ -1,4 +1,4 @@
-BINARY_NAME=main
+BINARY_NAME=web/main
 
 build:
 	go build -o ${BINARY_NAME} main.go

@@ -8,4 +8,4 @@ run: build
 
 clean:
 	go clean
-	rm -f${BINARY_NAME}
+	rm -f ${BINARY_NAME}

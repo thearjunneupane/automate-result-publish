@@ -57,14 +57,15 @@ automate-result-publish
 │   │    └── publish.go               # This file generate the result by sorting the selected teams 
 │   └── web 
 │        ├── static 
-│        │   ├── index.css   
-│        │   └── result.css  
+│        │   ├──index.css   
+│        │   └──result.css  
 │        ├── templates  
-│        │   ├── index.html  
-│        │   └── result.html 
-│        ├── main.go    
-│        ├── Makefile     
-│        └── ...                      # Here the 2 result excel files withmarks and withnamesonly is created. 
+│        │   ├──index.html  
+│        │   └──result.html 
+│        ├── main.go 
+│        ├── Makefile 
+│        └── ...                     # Here the 2 result excel files withmarks and withnamesonly is created.    
+│      
 │   
 ├── automate-result-publish-static  
 │   ├── demo_entry  
