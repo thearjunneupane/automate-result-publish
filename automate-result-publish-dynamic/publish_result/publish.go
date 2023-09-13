@@ -1,4 +1,4 @@
-package main
+package publish_result
 
 import (
 	"fmt"
@@ -25,7 +25,7 @@ func mergeCells(sheet *xlsx.Sheet, startRow, endRow, startCol, endCol int) {
 // processSubjectWithMarks processes a subject's Excel file and appends the result to the output sheet (with marks).
 func processSubjectWithMarks(outputSheet *xlsx.Sheet, subjectName string, columnIndex, numTeams int) {
 	// Open the Excel file for the subject with name subjectName from "subjects_marks" dir.
-	fileName := filepath.Join("publish_result/subjects_marks", subjectName+".xlsx")
+	fileName := filepath.Join("../publish_result/subjects_marks", subjectName+".xlsx")
 	file, err := xlsx.OpenFile(fileName)
 	if err != nil {
 		log.Fatalf("Error opening file %s: %v", fileName, err)
@@ -94,7 +94,7 @@ func processSubjectWithMarks(outputSheet *xlsx.Sheet, subjectName string, column
 // processSubjectNamesOnly processes a subject's Excel file and appends the result to the output sheet with only team names.
 func processSubjectNamesOnly(outputSheet *xlsx.Sheet, subjectName string, columnIndex, numTeams int) {
 	// Open the Excel file for the subject you want to process.
-	fileName := filepath.Join("publish_result/subjects_marks", subjectName+".xlsx")
+	fileName := filepath.Join("../publish_result/subjects_marks", subjectName+".xlsx")
 	file, err := xlsx.OpenFile(fileName)
 	if err != nil {
 		log.Fatalf("Error opening file %s: %v", fileName, err)
@@ -153,8 +153,8 @@ func processSubjectNamesOnly(outputSheet *xlsx.Sheet, subjectName string, column
 	}
 }
 
-func main() {
-	resultsDir := "publish_result/results"
+func Publish() {
+	resultsDir := "../publish_result/results"
 	altresultsDir := ""
 	if err := os.MkdirAll(resultsDir, os.ModePerm); err != nil {
 		log.Fatalf("Error creating results directory: %v", err)

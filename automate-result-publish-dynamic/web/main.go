@@ -8,6 +8,8 @@ import (
 	"strings"
 
 	"github.com/tealeg/xlsx"
+	"github.com/thearjunneupane/automate-result-publish/automate-result-publish-dynamic/demo_entry"
+	"github.com/thearjunneupane/automate-result-publish/automate-result-publish-dynamic/publish_result"
 )
 
 // mergeCellsin a given range of rows and columns.
@@ -86,7 +88,7 @@ func resultHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Read and parse HTML template
-	tmpl, err := template.ParseFiles("web/templates/result.html")
+	tmpl, err := template.ParseFiles("templates/result.html")
 	if err != nil {
 		http.Error(w, "Error parsing HTML template: "+err.Error(), http.StatusInternalServerError)
 		return
@@ -106,12 +108,14 @@ func resultHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	demo_entry.Demo_Entry()
+	publish_result.Publish()
 	// Define a route for displaying the result HTML
 	http.HandleFunc("/result", resultHandler)
 	http.HandleFunc("/", indexHandler)
 
 	// Serve static files (CSS)
-	fs := http.FileServer(http.Dir("web/static/"))
+	fs := http.FileServer(http.Dir("static/"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
 	// Start the HTTP server
@@ -121,7 +125,7 @@ func main() {
 }
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
-	tmpl, err := template.ParseFiles("web/templates/index.html")
+	tmpl, err := template.ParseFiles("templates/index.html")
 	if err != nil {
 		http.Error(w, "Error parsing HTML template: "+err.Error(), http.StatusInternalServerError)
 		return

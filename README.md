@@ -55,16 +55,16 @@ automate-result-publish
 │   │    ├── results                  # This folder will be created by demo_entry.go    
 │   │    │   └── ...                  # Here the 2 result excel files withmarks and withnamesonly is created.   
 │   │    └── publish.go               # This file generate the result by sorting the selected teams 
-│   ├── web 
-│   │    ├── static 
-│   │    │   ├──index.css   
-│   │    │   └──result.css  
-│   │    ├── templates  
-│   │    │   ├──index.html  
-│   │    │   └──result.html 
-│   │    ├── main.go    
-│   │    └── ...                     # Here the 2 result excel files withmarks and withnamesonly is created.    
-│   └── Makefile    
+│   └── web 
+│        ├── static 
+│        │   ├── index.css   
+│        │   └── result.css  
+│        ├── templates  
+│        │   ├── index.html  
+│        │   └── result.html 
+│        ├── main.go    
+│        ├── Makefile     
+│        └── ...                      # Here the 2 result excel files withmarks and withnamesonly is created. 
 │   
 ├── automate-result-publish-static  
 │   ├── demo_entry  
