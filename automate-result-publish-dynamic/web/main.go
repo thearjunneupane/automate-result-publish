@@ -116,7 +116,7 @@ func main() {
 	http.HandleFunc("/", indexHandler)
 
 	// Serve static files (CSS)
-	fs := http.FileServer(http.Dir("static/"))
+	fs := http.FileServer(http.Dir("automate-result-publish-dynamic/web/static/"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
 	// Start the HTTP server
