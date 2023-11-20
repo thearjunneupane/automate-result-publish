@@ -5,6 +5,7 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"os"
 	"strings"
 
 	"github.com/tealeg/xlsx"
@@ -119,9 +120,12 @@ func main() {
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
 	// Start the HTTP server
-	port := 8080
-	fmt.Printf("Server is listening on :%d...\n", port)
-	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d", port), nil))
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+	fmt.Printf("Server is listening on :%s...\n", port)
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), nil))
 }
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
