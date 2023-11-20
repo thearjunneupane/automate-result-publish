@@ -89,7 +89,7 @@ func resultHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Read and parse HTML template
-	tmpl, err := template.ParseFiles("templates/result.html")
+	tmpl, err := template.ParseFiles("automate-result-publish-dynamic/web/templates/result.html")
 	if err != nil {
 		http.Error(w, "Error parsing HTML template: "+err.Error(), http.StatusInternalServerError)
 		return
@@ -129,7 +129,7 @@ func main() {
 }
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
-	tmpl, err := template.ParseFiles("templates/index.html")
+	tmpl, err := template.ParseFiles("automate-result-publish-dynamic/web/templates/index.html")
 	if err != nil {
 		http.Error(w, "Error parsing HTML template: "+err.Error(), http.StatusInternalServerError)
 		return
